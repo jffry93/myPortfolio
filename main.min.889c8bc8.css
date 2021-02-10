@@ -207,7 +207,7 @@ body {
 }
 
 body#bg-img {
-    background: url(/portback.69e1e0b4.jpg);
+    background: url(./portback.69e1e0b4.jpg);
     background-attachment: fixed;
     background-size: cover
 }
