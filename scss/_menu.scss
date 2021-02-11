@@ -97,6 +97,7 @@
         }
         &.current>a {
             color: $secondary-color;
+            cursor: auto;
         }
     }
     .nav-link {
