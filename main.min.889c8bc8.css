@@ -204,7 +204,8 @@ header {
 
 main {
     min-height: calc(100vh - 60px);
-    padding: 4rem
+    padding: 4rem;
+    justify-content: center
 }
 
 main .icons {
@@ -265,12 +266,87 @@ main#home h1 {
     grid-area: job3
 }
 
+.projects {
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: repeat(3, 1fr)
+}
+
+.projects img {
+    width: 100%;
+    border: #fff 3px solid
+}
+
+.projects img:hover {
+    opacity: 0.5;
+    border-color: #eece1a;
+    transition: all 0.5s ease-out
+}
+
+.boxes {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-top: 1rem
+}
+
+.boxes div {
+    font-size: 2rem;
+    border: #fff 3px solid;
+    padding: 1.5rem 2.5rem;
+    margin-bottom: 3rem;
+    transition: all 0.5s ease-out
+}
+
+.boxes div:hover {
+    padding: 1rem 2rem;
+    background: #eece1a;
+    color: #000
+}
+
+.boxes div:hover span {
+    color: #000
+}
+
 #main-footer {
     text-align: center;
     padding: 1rem;
     background: #2b2b2b;
     color: #fff;
     height: 60px
+}
+
+.btn,
+.btn-dark,
+.btn-light {
+    display: block;
+    padding: 0.5rem 1rem;
+    border: 0;
+    margin-bottom: 0.3rem
+}
+
+.btn:hover,
+.btn-dark:hover,
+.btn-light:hover {
+    background: #eece1a;
+    color: #000
+}
+
+.btn-dark {
+    background: #000;
+    color: #fff
+}
+
+.btn-light {
+    background: #c4c4c4;
+    color: #333
+}
+
+@media screen and (min-width: 1171px) {
+    .projects {
+        grid-template-columns: repeat(4, 1fr)
+    }
 }
 
 @media screen and (max-width: 768px) {
@@ -315,30 +391,71 @@ main#home h1 {
         grid-template-areas: 'bioimage' 'bio' 'job1' 'job2' 'job3';
         grid-template-columns: 1fr
     }
+    .projects {
+        grid-template-columns: repeat(2, 1fr)
+    }
+    main#contact .boxes div {
+        font-size: 1.5rem
+    }
 }
 
 @media screen and (max-width: 500px) {
     main#home h1 {
-        font-size: 5rem
+        font-size: 5rem;
+        margin-top: 15vh
+    }
+    main#about h1,
+    main#contact h1,
+    main#work h1 {
+        font-size: 3rem;
+        margin-top: 5vh
+    }
+    main#about h2,
+    main#contact h2,
+    main#work h2 {
+        font-size: 1.5rem
+    }
+    main#about p,
+    main#contact p,
+    main#work p {
+        font-size: 1.2rem
+    }
+    .projects {
+        grid-template-columns: 1fr
+    }
+    main#contact .boxes div {
+        font-size: 1.2rem
     }
 }
 
 @media screen and (max-width: 400px) {
+    .menu .nav-link {
+        font-size: 20px
+    }
+    .menu .menu-branding {
+        height: 35vh
+    }
+    .menu .menu-nav {
+        height: 65vh
+    }
     main#home h1.lg-heading {
-        font-size: 3.7rem;
-        margin-top: 10vh
+        font-size: 3rem
     }
     main#home h2 {
-        font-size: 1.5rem
+        font-size: 1.2rem
     }
     .icons {
         font-size: 1rem
     }
-    main#about h1.lg-heading {
-        font-size: 3.7rem;
-        margin-top: 10vh
+    main#about h1,
+    main#contact h1,
+    main#work h1 {
+        font-size: 3rem;
+        margin-top: 5vh
     }
-    main#about h2 {
+    main#about h2,
+    main#contact h2,
+    main#work h2 {
         font-size: 1.5rem
     }
     main#about .about-info img {
@@ -346,6 +463,19 @@ main#home h1 {
     }
     main#about .about-info .bio {
         font-size: 1rem
+    }
+    main#work {
+        padding-left: 35px;
+        padding-right: 35px
+    }
+    main#contact .boxes div {
+        font-size: 1.2rem
+    }
+}
+
+@media screen and (max-width: 320px) {
+    main#home h1.lg-heading {
+        margin-top: 5vh
     }
 }
 
