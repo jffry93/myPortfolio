@@ -1,5 +1,9 @@
             // Widescreens
-            @include mediaXl {}
+            @include mediaXl {
+                .projects {
+                    grid-template-columns: repeat(4, 1fr);
+                }
+            }
             
             //Desktops @ laptops 
             @include mediaLg {}
@@ -47,6 +51,14 @@
                     grid-template-areas: 'bioimage' 'bio' 'job1' 'job2' 'job3';
                     grid-template-columns: 1fr;
                 }
+                .projects {
+                    grid-template-columns: repeat(2, 1fr);
+                }
+                main#contact {
+                    .boxes div {
+                        font-size: 1.5rem;
+                    }
+                }
             }
             
             //Smartphones 
@@ -54,32 +66,69 @@
                 main#home {
                     h1 {
                         font-size: 5rem;
+                        margin-top: 15vh;
+                    }
+                }
+                main#about,
+                main#contact,
+                main#work {
+                    h1 {
+                        font-size: 3rem;
+                        margin-top: 5vh;
+                    }
+                    h2 {
+                        font-size: 1.5rem;
+                    }
+                    p {
+                        font-size: 1.2rem;
+                    }
+                }
+                .projects {
+                    grid-template-columns: 1fr;
+                }
+                main#contact {
+                    .boxes div {
+                        font-size: 1.2rem;
                     }
                 }
             }
             
             //Small Smartphones
             @include mediaXs {
+                .menu {
+                    .nav-link {
+                        font-size: 20px;
+                    }
+                    .menu-branding {
+                        height: 35vh;
+                    }
+                    .menu-nav {
+                        height: 65vh;
+                    }
+                }
                 main#home {
                     h1.lg-heading {
-                        font-size: 3.7rem;
-                        margin-top: 10vh;
+                        font-size: 3rem;
                     }
                     h2 {
-                        font-size: 1.5rem;
+                        font-size: 1.2rem;
                     }
                 }
                 .icons {
                     font-size: 1rem;
                 }
-                main#about {
-                    h1.lg-heading {
-                        font-size: 3.7rem;
-                        margin-top: 10vh;
+                main#about,
+                main#contact,
+                main#work {
+                    h1 {
+                        font-size: 3rem;
+                        margin-top: 5vh;
                     }
                     h2 {
                         font-size: 1.5rem;
                     }
+                }
+                main#about {
                     .about-info {
                         img {
                             height: 200px;
@@ -87,6 +136,24 @@
                         .bio {
                             font-size: 1rem;
                         }
+                    }
+                }
+                main#work {
+                    padding-left: 35px;
+                    padding-right: 35px;
+                }
+                main#contact {
+                    .boxes div {
+                        font-size: 1.2rem;
+                    }
+                }
+            }
+            
+            //Iphone Se + iphone 12 mini
+            @include mediaSe {
+                main#home {
+                    h1.lg-heading {
+                        margin-top: 5vh;
                     }
                 }
             }
